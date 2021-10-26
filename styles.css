@@ -1,0 +1,665 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-family: 'Poppins', sans-serif;
+	color: #222;
+}
+
+.disableScrolling {
+	overflow: hidden;
+	height: 100%;
+}
+
+/* General Styling */
+
+h1 {
+	font-size: 80px;
+	line-height: 1.5em;
+}
+
+h2 {
+	font-size: 40px;
+	margin-bottom: 30px;
+	line-height: 1.5em;
+}
+
+h3 {
+	font-size: 30px;
+	line-height: 1.5em;
+}
+
+h4 {
+	font-size: 20px;
+	font-weight: 500;
+	line-height: 1.5em;
+}
+
+p {
+	font-size: 16px;
+	line-height: 1.5em;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.color-white {
+	color: #FFFFFF;
+}
+
+.page-hero {
+	width: 100%; /* Takes maximum width of the parent element */
+	height: 300px; /* Takes maximum height of the parent element */
+	background-color: #777;
+	background-image: linear-gradient(90deg, rgba(249,162,68,0.5) 0%, rgba(237,31,138,0.5) 100%);  /* Sets a linear gradient as the background */
+	display: flex; /* Using flexbox to align items centrally both vertically and horizontally */
+	justify-content: center; /* Aligning items centrally horizontally */
+	align-items: center; /* Aligning items centrally vertically */
+	flex-flow: column wrap; /* Ensuring that items are displayed under each other */
+}
+
+
+
+/* Header Styling */
+
+header {
+	display: flex; /* Declares a flexbox display */
+	flex-flow: row wrap; /* States the direction of the contents of the flexbox and what to do when the container width is exceeded */
+	background: rgb(255,255,255); /* White Background */
+	padding: 20px 5vw; /* Additional 20px padding space top & bottom - 5 viewport width left & right */
+	align-items: center; /* Vertically aligns the contents of the header - In this case, makes sure the logo and the menu are vertically centered */
+}
+
+header .logo-container {
+	flex-basis: 20%; /* Gives the logo 20% maximum width of the flexbox container */
+}
+
+header .mobile-menu-toggler {
+	display: none;
+}
+
+header > nav {
+	flex-basis: 80%; /* Gives the logo 80% maximum width of the flexbox container */
+	text-align: right; /*  Aligns the menu to the right */
+}
+
+header .logo-container .page-logo {
+	height: 65px; /* Sets the height of the logo image */
+	width: auto; /* Automatically sets the width of the image depending on the height */
+}
+
+header > nav ul li {
+	display: inline-block; /* Makes the list items appear horizontally */
+	padding: 0 10px; /* Adds 10px padding space to the left & right */
+}
+
+header > nav ul li a {
+	text-decoration: none; /* Removes default underline effect */
+	transition: 250ms; /* Adds a transition time for any effects that occur on this element */
+	text-transform: uppercase; /* Changes the text to uppercase */
+}
+
+header > nav ul li a:hover {
+	color: #F37871; /* On hover, changes the link color to our main colour. */
+}
+
+/* Hero Styling */
+
+#home-hero {
+	max-height: 500px; /* Giving this section a maximum height of 500px */
+	overflow: hidden; /* If any content goes beyond the maximum of 500px, hides it */
+	position: relative; /* Any elements within this section will be positioned relatively to this element */
+}
+
+#home-hero #hero-overlay {
+	position: absolute; /* This element is positioned according to the closest positioned relative element - in this case #home-hero */
+	top: 0; /* Starts at the top */
+	left: 0; /* Starts from the left */
+	width: 100%; /* Takes maximum width of the parent element */
+	height: 100%; /* Takes maximum height of the parent element */
+	background-image: linear-gradient(90deg, rgba(249,162,68,0.5) 0%, rgba(237,31,138,0.5) 100%);  /* Sets a linear gradient as the background */
+	display: flex; /* Using flexbox to align items centrally both vertically and horizontally */
+	justify-content: center; /* Aligning items centrally horizontally */
+	align-items: center; /* Aligning items centrally vertically */
+	flex-flow: column wrap; /* Ensuring that items are displayed under each other */
+}
+
+#home-hero #hero-overlay h1, #home-hero #hero-overlay h4 {
+	color: #FFF; /* Sets text color to be white */
+}
+
+#home-hero #scroll-prompt {
+	position: absolute; /* This element is positioned according to the closest positioned relative element - in this case #home-hero */
+	bottom: 20px; /* Starts 20px from the bottom of the parent element */
+	width: 100%; /* Takes maximum width of the parent element */
+	text-align: center; /* Aligns items within this div centrally */
+}
+
+#home-hero #scroll-prompt img {
+	height: 50px; /* Sets the height of the image to be 50px */
+	width: auto; /* Automatically sets the width of the image depending on the height */
+	animation-name: scroll-animate; /* Gives our image the following keyframe animation */
+	animation-duration: 4s; /* Duration of the animation */
+	animation-iteration-count: infinite; /* Does the animation infinitely */
+	cursor: pointer; /* On hover, changes the cursor to be a pointer indicating this can be clicked for an action - This will be added later on via JavaScript */
+}
+
+@keyframes scroll-animate { /* Declaring the keyframe animation */
+	0% { /* What happens at the point in the animation - 0% = start of the animation */
+		transform: translateY(0);
+	}
+	50% { /* 50% = middle of the animation duration | at 2s */
+		transform: translateY(10px); /* Moves the image 10px vertically down */
+	}
+	100% { /* 100% = end of the animation duration | at 4s */
+		transform: translateY(0);
+	}
+}
+
+/* Achievements Section */
+
+#achievements-section {
+	padding: 50px 5vw; /* Gives 50px and 5 viewport width padding space top/bottom & left/right respectively */
+}
+
+#achievements-section .achievements-list {
+	display: flex; /* Declares a flexbox display */
+	flex-flow: row wrap; /* States the direction of the contents of the flexbox and what to do when the container width is exceeded */
+	justify-content: space-between; /* States how the content will be aligned and how any additional space is assigned in the flexbox */
+	margin-top: 80px; /* Gives 80px margin spacing top */
+}
+
+#achievements-section .achievements-list .achievements-entry {
+	flex-basis: 33%; /* Gives the logo 33% maximum width of the flexbox container */
+	max-width: 33%; /* Ensures that this div cannot exceed the 33% width */
+	text-align: center; /* Aligns items centrally */
+}
+
+#achievements-section .achievements-list .achievements-entry .ae-icon-container {
+	transform: rotate(45deg); /* Rotates the container 45 degrees for the border effect*/
+	display: inline-block; /* Used in order for the div to only take the necessary width and height of the content */
+	border: 1px solid rgb(243,120,113); /* Gives the element a border */
+	margin-bottom: 80px; /* Gives 80px margin spacing top */
+}
+
+#achievements-section .achievements-list .achievements-entry .ae-icon-container i {
+	padding: 30px; /* Gives 30px padding space around the entire icon */
+	font-size: 50px; /* Sets icon size to 50px */
+	color: rgb(243,120,113); /* Sets icon colour */
+	transform: rotate(-45deg); /* Rotate the icon -45 degrees to make up for the initial rotation to ensure that the icon is upright */
+}
+
+/* Mission Statement Section */
+#statement-section {
+	padding: 50px 5vw; /* Gives 50px and 5 viewport width padding space top/bottom & left/right respectively */
+	text-align: center; /* Aligns text within section to center */
+	background-image: linear-gradient(90deg, rgba(249,162,68,0.5) 0%, rgba(237,31,138,0.5) 100%), url(assets/images/statement-bg.jpg); /* Places a background image and puts a linear gradient overlay on top */
+	background-position: center; /* Positions the background image in the center */
+	background-repeat: no-repeat; /* Ensures that the background image is not repeated in case the height/width exceeds the image dimensions */
+	background-size: cover; /* The image takes up the full width of the available space */
+	background-attachment: fixed; /* Doesn't allow the image to scroll with the rest of the page, generating a parallax effect */
+}
+
+#statement-section p {
+	margin-bottom: 30px; /* Adds margin space bottom of 30px */
+	font-weight: 300; /* Sets the font weight (boldness) to 300 (light) */
+}
+
+#statement-section a {
+	margin-top: 30px; /* Adds margin space top of 30px */
+	display: inline-block; /* Ensures that the <a> tag takes up only the required amount of space depending on its content */
+	border: 1px solid #FFF; /* Draws a border around the <a> tag */
+	padding: 8px 24px; /* Adds padding spacing around the <a> tag. 8px top & bottom. 24px left & right */
+	color: #FFF; /* Sets color of text to white */
+	text-decoration: none; /* Removes the default <a> tag underline */
+	transition: 250ms; /* Adds a transition time for any effects that occur on this element. 250ms = 250 milliseconds */
+}
+
+#statement-section a:hover {
+	background-color: #FFF; /* On hover, changes the background color to white */
+	color: #F37871; /* On hover, changes the color of text to our main colour */
+	box-shadow: 0 0 15px 4px rgba(0,0,0,0.3); /* On hover, draws a box-shadow around the <a> tag */
+}
+
+/* Testimonials Section */
+
+#testimonials-section {
+	padding: 50px 5vw; /* Gives 50px and 5 viewport width padding space top/bottom & left/right respectively */
+}
+
+#testimonials-section > h2 {
+	text-align: center /* Sets the heading for our section to be aligned centrally. */
+}
+
+.testimonials-entry {
+	display: flex; /* Declares a flexbox display */
+	flex-flow: row wrap; /* States the direction of the contents of the flexbox and what to do when the container width is exceeded */
+	align-items: center; /* Aligns the content within vertically centered */
+	justify-content: space-between; /* States how the content will be aligned and how any additional space is assigned in the flexbox */
+}
+
+.tst-entry-image-wrapper {
+	width: 20%; /* Sets the width of the image wrapper */
+}
+
+.tst-entry-image-wrapper img {
+	width: 100%; /* Sets the width of the image within the wrapper - it will take 100% of the 20% width we previously set */
+	height: auto; /* The image will respect its aspect ratio */
+}
+
+.tst-entry-content-wrapper {
+	width: 75%; /* Sets the width of the content wrapper. Since we previously used 20% width for the image and now 78% - there will be 2% of the width of the page which will be used as space in between them thanks to the space-between value we previously gave */
+}
+
+.tst-entry-content-wrapper .tst-entry-quote{
+	margin-bottom: 35px; /* Additional spacing for content */
+}
+
+/* Portfolio Section */
+
+#portfolio-section {
+	padding: 50px 5vw; /* Gives 50px and 5 viewport width padding space top/bottom & left/right respectively */
+	background-color: #000;
+}
+
+#portfolio-section > h2 {
+	text-align: center; /* Sets the heading for our section to be aligned centrally. */
+	color: #FFF;
+}
+
+#portfolio-section .grid { 
+	margin: 0 auto; /* Sets the content within the masonry grid to be centered */
+}
+
+#portfolio-section .grid-item {
+	margin-bottom: 10px; /* Vertical gutter between items */
+	width: 360px; /* Sets width of each grid item. */
+}
+
+#portfolio-section .grid-item__width2 {
+	width: 720px; /* A class to be used when we want the image to take double the space */
+}
+
+#portfolio-section .grid-item img {
+	display: block; /* Image takes up entire width of the grid-item container */
+	width: 100%; /* Image takes up entire width of the grid-item container */
+}
+
+#portfolio-section .grid-item:hover::before {
+	position: absolute;
+	font-size: 24px;
+	color: #FFF;
+	left: 0;
+	top: 0;
+	width: 100%; /* Using position absolute and width/height 100% to take the full space */
+	height: 100%;
+	background-color: rgba(0,0,0,0.5);
+	display: flex; /* Using flex to align content horizontally and vertically */
+	justify-content: center;
+	align-items: center;
+}
+
+/* Changing the content of the hovered item depending on what item it is */
+#portfolio-section .grid-item:nth-child(1):hover::before {content: '1';}
+#portfolio-section .grid-item:nth-child(2):hover::before {content: '2';}
+#portfolio-section .grid-item:nth-child(3):hover::before {content: '3';}
+#portfolio-section .grid-item:nth-child(4):hover::before {content: '4';}
+#portfolio-section .grid-item:nth-child(5):hover::before {content: '5';}
+#portfolio-section .grid-item:nth-child(6):hover::before {content: '6';}
+#portfolio-section .grid-item:nth-child(7):hover::before {content: '7';}
+
+#cta-section {
+	background: linear-gradient(90deg, rgba(249,162,68,0.5) 0%, rgba(237,31,138,0.5) 100%), url('assets/images/cta-bg.jpg');
+	background-position: center;
+	background-size: cover;
+	height: 400px;
+	text-align: center;
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: center;
+}
+
+#cta-section h3 {
+	color: #FFF;
+}
+
+#cta-section h3 img {
+	width: 30px;
+	height: auto;
+	margin: 0 10px;
+	vertical-align: middle;
+}
+
+#cta-section a {
+	color: #FFF;
+	text-transform: uppercase;
+	border: 1px solid #FFF;
+	padding: 10px 20px;
+	display: inline-block;
+	width: 140px;
+	margin: 30px auto 0;
+	text-decoration: none;
+	transition: 250ms;
+}
+
+#cta-section a:hover {
+	background-color: #FFF;
+	color: #000;
+}
+
+footer {
+	padding: 20px 5vw;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+}
+
+footer .footer-copyright img {
+	width: 30px;
+	height: auto;
+	vertical-align: middle;
+	margin-right: 10px;
+}
+
+footer .footer-socials {
+	display: flex;
+	flex-flow: row wrap;
+	align-items: center;
+}
+
+footer .footer-socials a i {
+	font-size: 24px;
+	margin-left: 10px;
+	transition: 250ms;
+}
+
+footer .footer-socials a:nth-child(1):hover i{
+	color: #00f;
+}
+
+footer .footer-socials a:nth-child(2):hover i {
+	color: #f00;
+}
+
+
+/** Portfolio Page **/
+
+#portfolio-container {
+	padding: 50px 0;
+}
+
+#portfolio-container .filter-button-group {
+	text-align: center;
+	margin: 50px 0;
+}
+
+#portfolio-container .filter-button-group button {
+	display: inline-block;
+	border: 1px solid #FFF;
+	padding: 8px 24px;
+	color: #000;
+	transition: 250ms;
+	cursor: pointer;
+}
+
+#portfolio-container .filter-button-group button:hover {
+	background-color: #FFF;
+	color: #F37871;
+	box-shadow: 0 0 15px 4px rgba(0,0,0,0.3);
+}
+
+#portfolio-container .isotope-grid {
+	width: 90vw;
+	margin: 0 auto;
+}
+
+#portfolio-container .isotope-grid .grid-item {
+	width: 24%;
+	height: 400px;
+	margin-bottom: 10px;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+#portfolio-container .grid-item:hover::before {
+	position: absolute;
+	font-size: 24px;
+	color: #FFF;
+	left: 0;
+	top: 0;
+	width: 100%; /* Using position absolute and width/height 100% to take the full space */
+	height: 100%;
+	background-color: rgba(0,0,0,0.5);
+	display: flex; /* Using flex to align content horizontally and vertically */
+	justify-content: center;
+	align-items: center;
+}
+
+/* Changing the content of the hovered item depending on what item it is */
+#portfolio-container .grid-item:nth-child(1):hover::before {content: '1';}
+#portfolio-container .grid-item:nth-child(2):hover::before {content: '2';}
+#portfolio-container .grid-item:nth-child(3):hover::before {content: '3';}
+#portfolio-container .grid-item:nth-child(4):hover::before {content: '4';}
+#portfolio-container .grid-item:nth-child(5):hover::before {content: '5';}
+#portfolio-container .grid-item:nth-child(6):hover::before {content: '6';}
+#portfolio-container .grid-item:nth-child(7):hover::before {content: '7';}
+
+
+/** Blog Page **/
+
+#blogs {
+	padding: 50px 5vw;
+}
+
+#blogs #featured-blogs {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+}
+
+#blogs #featured-blogs > h2 {
+	width: 100%;
+}
+
+#blogs #featured-blogs .primary-blog-wrapper {
+	width: 60%;
+	background-size: cover;
+	background-position: center;
+	height: 350px;
+}
+
+#blogs a {
+	text-decoration: none;
+}
+
+#blogs #featured-blogs .primary-blog-wrapper .blog-entry {
+	height: 100%;
+	background-color: rgba(0,0,0,0.5);
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: flex-end;
+	transition: 250ms;
+}
+
+#blogs #featured-blogs .primary-blog-wrapper .blog-entry:hover {
+	background: linear-gradient(90deg, rgba(249,162,68,0.2) 0%, rgba(237,31,138,0.2) 100%);
+}
+
+#blogs #featured-blogs .primary-blog-wrapper .blog-entry h3, #blogs #featured-blogs .primary-blog-wrapper .blog-entry p {
+	color: #FFF;
+	margin: 20px;
+}
+
+#blogs #featured-blogs .primary-blog-wrapper .blog-entry hr{
+	color: #FFF;
+}
+
+#blogs #featured-blogs .secondary-blog-wrapper {
+	width: 35%;
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: space-between;
+}
+
+#blogs #featured-blogs .secondary-blog-wrapper p{
+	color: rgb(243,120,113);
+}
+
+#blogs #featured-blogs .secondary-blog-wrapper h4 {
+	transition: 250ms;
+}
+
+#blogs #featured-blogs .secondary-blog-wrapper h4:hover {
+	color: rgb(243,120,113);
+}
+
+#blogs #latest-blogs {
+	padding-top: 50px;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+}
+
+#blogs #latest-blogs > h2 {
+	width: 100%;
+}
+
+#blogs #latest-blogs .blog-entry {
+	width: 33%;
+	background-size: cover;
+	background-position: center;
+	height: 400px;
+	margin-bottom: 10px;
+}
+
+#blogs #latest-blogs .blog-entry .blog-entry-content {
+	height: 100%;
+	background-color: rgba(0,0,0,0.5);
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: flex-end;
+	transition: 250ms;
+}
+
+#blogs #latest-blogs .blog-entry .blog-entry-content:hover {
+	background: linear-gradient(90deg, rgba(249,162,68,0.2) 0%, rgba(237,31,138,0.2) 100%);
+}
+
+#blogs #latest-blogs .blog-entry .blog-entry-content h4, #blogs #latest-blogs .blog-entry .blog-entry-content p {
+	color: #FFF;
+	margin: 20px;
+}
+
+#blogs #latest-blogs .blog-entry .blog-entry-content hr{
+	color: #FFF;
+}
+
+/* Contact Page Styling */
+
+#contact-container {
+	padding: 50px 5vw;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+}
+
+#contact-container #contact-text, #contact-container #contact-form {
+	width: 48%;
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: center;
+}
+
+#contact-container #contact-text > h3 {
+	color: #FF546C;
+}
+
+#contact-container #contact-form .form-row {
+	margin-bottom: 30px;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+}
+
+#contact-form input, #contact-form select, #contact-form textarea {
+	width: 48%;
+	background-color: transparent;
+	border: none;
+	border-bottom: 2px solid rgba(0,0,0,0.6);
+	color: #222;
+	font-family: 'Poppins', sans-serif;
+	transition: 250ms;
+	outline: none;
+}
+
+#contact-form input:hover, #contact-form select:hover,
+#contact-form input:focus, #contact-form select:focus{
+	border-bottom: 2px solid #FF546C;
+}
+
+#contact-form input:active {
+	border-bottom: 2px solid green;
+}
+
+#contact-form textarea {
+	width: 100%;
+	height: 100px;
+	border: 2px solid rgba(0,0,0,0.6);
+}
+
+#contact-form textarea:hover, #contact-form textarea:focus {
+	border: 2px solid #FF546C;
+}
+
+#contact-form input[type="submit"] {
+	background-color: transparent;
+	width: 80%;
+	margin: 0 auto;
+	padding: 5px 0;
+	border: 2px solid rgba(0,0,0,0.6);
+	cursor: pointer;
+}
+
+#contact-form input[type="submit"]:hover {
+	background-color: #FF546C;
+	color: white;
+}
+
+/** Media Queries **/
+
+@media only screen and (max-width: 767px) {
+	
+	header { 
+		justify-content: space-between;
+	}
+	
+	header .mobile-menu-toggler {
+		display: block;
+		outline: none;
+	}
+	
+	header > nav {
+		position: fixed;
+		top: 112px;
+		right: -100%; 
+		width: 100%;
+		height: calc(100% - 112px);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-color: #FFF;
+		z-index: 20;
+		transition: 350ms;
+	}
+	
+	header > nav.visible {
+		right: 0;
+	}
+	
+	header > nav ul li {
+		display: block;
+		text-align: center;
+		padding: 25px 10px;
+	}
+}

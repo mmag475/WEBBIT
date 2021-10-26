@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:300,500,700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="../assets/css/fontawesome.min.css">
+	<link rel="stylesheet" href="../assets/css/fa-brands.min.css">
+	<link rel="stylesheet" href="../assets/css/fa-solid.min.css">
+	<link rel="stylesheet" href="../assets/css/owl.carousel.min.css">
+	<link rel="stylesheet" href="../assets/css/owl.theme.default.min.css">
+	<link rel="stylesheet" href="../assets/css/hamburgers.min.css">
+	<link rel="stylesheet" href="../styles.css">
+	<title>Webbit</title>	
+</head>
+
+<body>
+	<header>
+		<div class="logo-container">
+			<a href="../index.html">
+				<img class="page-logo" src="../assets/images/logo.png" alt="Webbit Logo">
+			</a>
+		</div>
+		<button class="hamburger hamburger--vortex mobile-menu-toggler" type="button">
+		  <span class="hamburger-box">
+			<span class="hamburger-inner"></span>
+		  </span>
+		</button>
+		<nav>
+			<ul>
+				<li><a href="about.html">About</a></li>
+				<li><a href="portfolio.html">Portfolio</a></li>
+				<li><a href="blog.html">Blog</a></li>
+				<li><a href="contact.html">Contact</a></li>
+			</ul>
+		</nav>
+	</header>
+	<section class="page-hero">
+		<div id="hero-overlay">
+			<h1 class="color-white">Portfolio.</h1>
+		</div>
+	</section>
+	<section id="portfolio-container">
+		<div class="button-group filter-button-group">
+			<button data-filter="*">Show All</button>
+			<button data-filter=".stats">Statistics</button>
+			<button data-filter=".tech">Technology</button>
+			<button data-filter=".ecomm">Ecommerce</button>
+			<button data-filter=".quote">Quotes</button>
+			<button data-filter=".tech:not(.ecomm)">Technology (not ecommerce related)</button>
+		</div>
+		<div class="isotope-grid">
+			<div class="grid-item tech stats" style="background-image: url('../assets/images/prtf1.jpg')"></div>
+			
+			<div class="grid-item tech stats" style="background-image: url('../assets/images/prtf2.jpg')"></div>
+			
+			<div class="grid-item quote" style="background-image: url('../assets/images/prtf3.jpg')"></div>
+			
+			<div class="grid-item quote" style="background-image: url('../assets/images/prtf4.jpg')"></div>
+			
+			<div class="grid-item tech ecomm" style="background-image: url('../assets/images/prtf5.jpg')"></div>
+			
+			<div class="grid-item tech" style="background-image: url('../assets/images/prtf6.jpg')"></div>
+			
+			<div class="grid-item quote" style="background-image: url('../assets/images/prtf7.jpg')"></div>
+		</div>
+	
+	</section>
+	
+	<section id="cta-section">
+		<h3>Let's talk about what <img src="../assets/images/logo-white.png" alt="Logo"> can do for you.</h3>
+		<a href="contact.html">Contact Us</a>
+	</section>
+	<footer>
+		<div class="footer-copyright">
+			<p><img src="../assets/images/logo.png"> &copy; 2020 | <a href="#">Privacy Policy</a></p>
+		</div>
+		<div class="footer-socials">
+			<a href="https://www.facebook.com"><i class="fab fa-facebook"></i></a>
+			<a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
+		</div>
+	</footer>
+	
+	<script src="../assets/js/jquery.3.5.1.js"></script>
+	<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+	<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+	<script src="../assets/js/owl.carousel.min.js"></script>
+	<script src="../assets/js/scripts.js"></script>
+</body>
+	
+</html>
